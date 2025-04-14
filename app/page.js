@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 
 function Card({children}) {
@@ -7,6 +8,11 @@ function Card({children}) {
 }
 
 export default function Home() {
+  const handleClick=(e)=>{
+    e.preventDefault();
+    console.log(e)
+    alert("Annapurna is my lovely daughter. But today she is being lazy !")
+ }
   const name = "Ashok ";
   return (
     <>
@@ -22,6 +28,12 @@ export default function Home() {
         <Card/>
         <Card/>
         <Card/>
+
+<button onClick={handleClick} className="inline-flex items-center justify-center px-8 py-4 font-sans font-semibold tracking-wide text-white bg-blue-500 rounded-lg h-[60px]">
+  Click me!
+</button>
+
+
       </div>
     </>
   );
