@@ -3,8 +3,6 @@
 import { useState } from "react"
 import Card from "@/components/card"
 
-
-
 export default function Home() {
   const [isVisible, setIsVisible] = useState(true)
   const [names, setNames] = useState(['Piotr', 'John', 'Terry'])
@@ -12,14 +10,9 @@ export default function Home() {
   const handleClick = () => {
     setIsVisible(!isVisible)
   }
-
-  const handleAdd=()=>{
-    setNames([...names,'new Elements'])
-
+  const handleAdd = () => {
+    setNames([...names, 'New element!'])
   }
- 
-
-
   const cards = isVisible
     && names.map((name, index) => <Card key={index}>{name}</Card>)
   return (
@@ -31,7 +24,7 @@ export default function Home() {
           <button onClick={handleClick}>
             {isVisible ? 'Hide' : 'Show'}
           </button>
-      <button onClick={handleAdd}>Add</button>
+          <button onClick={handleAdd}>Add</button>
         </div>
       </div>
     </>
